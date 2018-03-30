@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(602, 603);
             this.Name = "MainScreen";
             this.Text = "Snake and Ladder";
+            this.Load += new System.EventHandler(this.MainScreen_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainScreen_Paint);
             this.ResumeLayout(false);
 
