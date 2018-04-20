@@ -49,6 +49,7 @@
             this.btnPlay.TabIndex = 0;
             this.btnPlay.Text = "Start Game";
             this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // nudPlayerCount
             // 
@@ -89,6 +90,7 @@
             this.btnQuit.TabIndex = 3;
             this.btnQuit.Text = "Quit Game";
             this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // pnlOverlay
             // 
@@ -123,6 +125,7 @@
             // tmrTurnCounter
             // 
             this.tmrTurnCounter.Interval = 500;
+            this.tmrTurnCounter.Tick += new System.EventHandler(this.tmrTurnCounter_Tick);
             // 
             // MainScreen
             // 
