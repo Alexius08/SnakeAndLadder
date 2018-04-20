@@ -19,6 +19,7 @@ namespace SnakeAndLadder
             {
                 p[i] = new Player();
                 p[i].playorder = i;
+                p[i].isactive = i < 2;
             }
         }
 
@@ -36,15 +37,35 @@ namespace SnakeAndLadder
             }
         }
 
-        public Player[] p = new Player[4];
+        Player[] p = new Player[4];
         Point[] tokenloc = new Point[4];
-
+        bool GameOngoing = false;
+        Image gameboard = Image.FromFile(Environment.CurrentDirectory + "\\gameboard.jpg");
 
         private void MainScreen_Paint(object sender, PaintEventArgs e)
         {
-            for (int i = 0; i<4; i++)
+            if (GameOngoing)
             {
-                tokenloc[i] = p[i].calctokenlocation();
+                Brush[] PlayerColor = new Brush[] { Brushes.Blue, Brushes.Red, Brushes.Green, Brushes.Gold };
+                for (int i = 0; i < 4; i++)
+                {
+                    tokenloc[i] = p[i].calctokenlocation();
+                }
+
+                Pen gridline = new Pen(Brushes.Black, 1);
+                int bottom = Height - 23;
+
+                e.Graphics.DrawImage(gameboard, 0, 0, 600, 600);
+                int tokensize = 20;
+                for (byte i = 1; i <= 10; i++)
+                {
+                    e.Graphics.DrawLine(gridline, 60 * i, 0, 60 * i, bottom);
+                    e.Graphics.DrawLine(gridline, 0, 60 * i, Width, 60 * i);
+                }
+                for (int i = 0; i < 4; i++)
+                {
+                    if (p[i].isactive) e.Graphics.FillEllipse(PlayerColor[i], tokenloc[i].X, tokenloc[i].Y, tokensize, tokensize);
+                }
             }
 
             Pen gridline = new Pen(Brushes.Black, 1);
