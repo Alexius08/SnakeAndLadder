@@ -139,7 +139,6 @@
             this.Controls.Add(this.btnPlay);
             this.Name = "MainScreen";
             this.Text = "Snake and Ladder";
-            this.Load += new System.EventHandler(this.MainScreen_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainScreen_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayerCount)).EndInit();
             this.pnlOverlay.ResumeLayout(false);

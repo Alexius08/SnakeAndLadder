@@ -69,11 +69,6 @@ namespace SnakeAndLadder
             }
         }
 
-        private void MainScreen_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPlay_Click(object sender, EventArgs e)
         {
             GameOngoing = true;
