@@ -121,6 +121,7 @@
             this.btnRollDice.TabIndex = 0;
             this.btnRollDice.Text = "Roll Dice\r\n0";
             this.btnRollDice.UseVisualStyleBackColor = true;
+            this.btnRollDice.Click += new System.EventHandler(this.btnRollDice_Click);
             // 
             // tmrTurnCounter
             // 
