@@ -89,6 +89,9 @@ namespace SnakeAndLadder
                     p[i].IsActive = false;
                 }
             }
+            Random random = new Random();
+            PlayerTurn = PlayerTurn.OrderBy(x => random.Next()).ToList();
+            lblTurnIndicator.Text = "It's Player " + (PlayerTurn[0] + 1) + "'s turn";
             lblPlayerCount.Hide();
             nudPlayerCount.Hide();
             btnPlay.Hide();
